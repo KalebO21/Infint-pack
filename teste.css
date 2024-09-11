@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    overflow: auto;
+}
+
+
+
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: #a09f9f;
+}
+
+::-webkit-scrollbar-thumb{
+    background: rgb(211,3,3);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+nav{
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+}
+
+.nav-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo{
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.logo span{
+    color: rgb(211,3,3);
+    text-shadow: 0 0 10px rgb(211,3,3) ;
+}
+
+.hamburg,
+.cancel{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: white;
+    display: none;
+    font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+}
+
+.nav-container .links {
+    display: flex;
+}
+
+.nav-container .links a{
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 550;
+    transition: 0.3s linear;
+}
+
+.nav-container .links a:hover{
+    color: rgb(211,3,3);
+    border-bottom: 2px solid rgb(211,3,3);
+}
+
+.dropdown{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: blur(4px) brightness(40%);
+    box-shadow: 0 0  20px black;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    padding: 15px 0;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a:hover{
+    background-color: rgb(211,3,3);
+}
+
+
+section{
+    width: 100%;
+    height: 90vh;
+}
+
+@media (max-width:884px) {
+    nav .logo{
+        position: absolute;
+        top: 16px;
+        left: 15px;
+        font-size: 1.5rem;
+    }
+
+    .main-container{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .nav-container .links{
+        display: none;
+    }
+
+    .hamburg,
+    .cancel{
+        display: block;
+    }
+
+    .main-container .content{
+        width: 80%;
+    }
+    .social-links i{
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.5rem;
+    }
+
+    .main-container .image{
+        z-index: -1;
+        width: 50%;
+        height: 60%;
+    }
+}
+
+
+@media (max-width:440px) {
+    .main-container .image{
+        width: 70%;
+        height: 60%;
+    }
+
+    .main-container .content{
+        width: 80%;
+    }
+
+    .main-container button{
+        margin-top: 15px;
+    }
+}
+
+footer{
+    background: rgb(211,3,3);
+    padding:  10px 0;
+    margin-top: 1000px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+footer .text span{
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+}
+
+footer .text span a{
+    font-weight: 500;
+    color: #fff;
+}
+
+footer .text span a:hover{
+    text-decoration: underline;
+}
+
+
+/* Codigo antigo */
+
+.audio-container {
+    display: flex;
+    align-items: center; /* Alinha verticalmente ao centro */
+    margin: 25px 20px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+    
+}
+
+.audio-image {
+    width: 100px; /* Ajuste o tamanho da imagem conforme necessário */
+    height: auto;
+    border-radius: 5px;
+    margin-right: 20px; /* Espaçamento entre a imagem e o player */
+}
+
+.audio-content {
+    flex: 1; /* Faz o conteúdo ocupar o espaço restante */
+}
+
+audio {
+    width: 100%;
+    height: 70px;
+}
+
+/* Botão de download */
+.download-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Contadores de tempo */
+.audio-timer {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Estilizando controles do MediaElement.js */
+.mejs__container {
+    background-color: #333 !important;
+    border-radius: 30px !important;
+    padding: 20px !important;
+}
+
+.mejs__controls {
+    background: rgb(2, 2, 2) !important;
+    padding: 0 !important;
+    color: rgb(168, 28, 28) !important;
+}
+
+.mejs__button {
+    color: rgb(8, 8, 8) !important;
+}
+
+.mejs__time-current {
+    background-color: #007BFF !important;
+}
+
+.mejs__time-total {
+    background-color: #a3a3a3 !important;
+}
+
+.mejs__volume-button {
+    color: rgb(240, 5, 5) !important;
+}
+
+
+
